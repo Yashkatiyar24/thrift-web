@@ -48,6 +48,7 @@ To run the application in development mode with hot reloading:
 ```
 npm run dev
 ```
+link- https://github.com/Yashkatiyar24/thrift-web 
 
 ## Project Structure
 
