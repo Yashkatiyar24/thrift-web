@@ -41,6 +41,17 @@ EcoFinds is a web application for browsing and purchasing second-hand products. 
    ```
 5. The application will be available at http://localhost:12000
 
+### File Permissions
+
+If you encounter permission issues when trying to modify files or run build commands, ensure that all files have the correct permissions:
+
+```bash
+# From the project root directory
+chmod -R 755 .
+```
+
+This grants read, write, and execute permissions to the owner, and read and execute permissions to others, which should be sufficient for most development workflows.
+
 ### Development
 
 To run the application in development mode with hot reloading:

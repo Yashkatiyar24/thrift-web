@@ -25,11 +25,14 @@ app.use('/api/products', productRoutes);
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 // Serve index.html for client-side routing
-const clientRoutes = ['/', '/products', '/products/:id', '/about', '/contact'];
-clientRoutes.forEach(route => {
-  app.get(route, (req, res) => {
-    res.sendFile(path.join(__dirname, '../../dist/index.html'));
-  });
+app.get('*', (req, res, next) => {
+  // Skip API routes
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+  
+  // Serve the index.html for all other routes (client-side routing)
+  res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
 
 // Sample data for testing
